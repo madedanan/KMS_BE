@@ -34,7 +34,7 @@ public class MateriServiceImpl implements MateriService {
             materiList.add(entry.getValue().toString());
         }
         String result = polmanAstraRepository.callProcedure("kms_createMateri", materiList.toArray(new String[0]));
-        System.out.println(materiList);
+        System.out.println("adada"+materiList);
         return result;
     }
 }
