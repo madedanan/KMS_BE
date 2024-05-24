@@ -22,7 +22,7 @@ public class ForumRest {
 
     @PostMapping("/SaveDataForum")
     public String saveDataForum(@RequestBody Map<String, Object> data){
-        System.out.println("DAAA"+data);
+        System.out.println("FAAA"+data);
         return forumService.saveDataForum(data);
     }
 }
