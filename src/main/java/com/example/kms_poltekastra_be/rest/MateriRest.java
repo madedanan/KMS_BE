@@ -29,4 +29,8 @@ public class MateriRest {
         System.out.println("DAAA"+data);
         return materiService.saveDataMateri(data);
     }
+    @PostMapping("/GetListKategoriProgram")
+    public String getListKategoriProgram(@RequestBody Map<String, Object> data){
+        return materiService.getListKategoriProgram(data);
+    }
 }
