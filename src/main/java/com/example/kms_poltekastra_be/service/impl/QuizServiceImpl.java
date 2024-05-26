@@ -17,16 +17,6 @@ public class QuizServiceImpl implements QuizService {
     PolmanAstraRepository polmanAstraRepository;
 
     @Override
-    public String getDataQuiz(Map<String, Object> data){
-        List<String> quizList = new ArrayList<>();
-        for(Map.Entry<String, Object>entry : data.entrySet()){
-            quizList.add(entry.getValue().toString());
-        }
-        String result = polmanAstraRepository.callProcedure("kms_getDataQuiz", quizList.toArray(new String[0]));
-        return result;
-    }
-
-    @Override
     public String saveDataQuiz(Map<String, Object> data) {
         System.out.println("Quizs : " + data);
         List<String> quizList = new ArrayList<>();
