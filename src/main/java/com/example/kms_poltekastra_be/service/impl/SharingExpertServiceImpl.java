@@ -24,7 +24,7 @@ public class SharingExpertServiceImpl implements SharingExpertService {
         for(Map.Entry<String, Object>entry : data.entrySet()){
             sharingList.add(entry.getValue().toString());
         }
-        String result = polmanAstraRepository.callProcedure("kms_createForum", sharingList.toArray(new String[0]));
+        String result = polmanAstraRepository.callProcedure("kms_createSharingExpert", sharingList.toArray(new String[0]));
         System.out.println(sharingList);
         return result;
     }
