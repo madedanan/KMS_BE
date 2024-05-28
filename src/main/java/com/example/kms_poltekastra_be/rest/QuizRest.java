@@ -32,8 +32,8 @@ public class QuizRest {
 
     @CrossOrigin
     @PostMapping("/SaveDataQuiz")
-    public String saveDataQuiz(@RequestBody Map<String, Object> data){
-        System.out.println("DAAA"+data);
+    public String saveDataQuiz(@RequestBody Map<String, Object> data) {
+        System.out.println("quiz" + data);
         return quizService.saveDataQuiz(data);
     }
 

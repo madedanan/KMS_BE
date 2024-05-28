@@ -37,14 +37,14 @@ public class QuizServiceImpl implements QuizService {
     }
 
     @Override
-    public String saveDataQuiz(Map<String, Object> data){
-        System.out.println("Quiz : "+data);
+    public String saveDataQuiz(Map<String, Object> data) {
+        System.out.println("Quizs : " + data);
         List<String> quizList = new ArrayList<>();
-        for(Map.Entry<String, Object>entry : data.entrySet()){
+        for (Map.Entry<String, Object> entry : data.entrySet()) {
             quizList.add(entry.getValue().toString());
         }
-        String result = polmanAstraRepository.callProcedure("kms_createTransaksiQuiz", quizList.toArray(new String[0]));
-        System.out.println("adada"+quizList);
+        String result = polmanAstraRepository.callProcedure("kms_createQuiz", quizList.toArray(new String[0]));
+        System.out.println("ada" + quizList);
         return result;
     }
 }
