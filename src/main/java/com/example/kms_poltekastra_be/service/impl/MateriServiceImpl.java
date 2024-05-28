@@ -37,4 +37,38 @@ public class MateriServiceImpl implements MateriService {
         System.out.println("adada"+materiList);
         return result;
     }
+
+    @Override
+    public String getProgresMateri(Map<String, Object> data){
+        List<String> materiList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            materiList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_getPoinProgress", materiList.toArray(new String[0]));
+        return result;
+    }
+
+    @Override
+    public String saveProgresMateri(Map<String, Object> data){
+        System.out.println("Materis : "+data);
+        List<String> materiList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            materiList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_saveProgresMateri", materiList.toArray(new String[0]));
+        System.out.println("adada"+materiList);
+        return result;
+    }
+
+    @Override
+    public String updateProgresMateri(Map<String, Object> data){
+        System.out.println("Materis : "+data);
+        List<String> materiList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            materiList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_updateMateriPoinProgress", materiList.toArray(new String[0]));
+        System.out.println("adada"+materiList);
+        return result;
+    }
 }
