@@ -18,9 +18,11 @@ public class QuizRest {
         this.quizService = quizServiceImpl;
     }
 
+
+    @CrossOrigin
     @PostMapping("/SaveDataQuiz")
     public String saveDataQuiz(@RequestBody Map<String, Object> data) {
-        System.out.println("ADA" + data);
+        System.out.println("quiz" + data);
         return quizService.saveDataQuiz(data);
     }
 }

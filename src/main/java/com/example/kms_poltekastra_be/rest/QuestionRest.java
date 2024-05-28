@@ -14,13 +14,13 @@ public class QuestionRest {
     @Autowired
     private QuestionService questionService;
 
-    public QuestionRest(QuestionServiceImpl questionServiceImpl){
+    public QuestionRest(QuestionServiceImpl questionServiceImpl)    {
         this.questionService = questionServiceImpl;
     }
 
-    @PostMapping("/SaveDataQustion")
+    @PostMapping("/SaveDataQuestion")
     public String saveDataQuestion(@RequestBody Map<String, Object> data) {
-        System.out.println("ADA" + data);
+        System.out.println("question" + data);
         return questionService.saveDataQuestion(data);
     }
 }
