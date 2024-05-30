@@ -26,12 +26,12 @@ public class MateriRest {
 
     @PostMapping("/SaveDataMateri")
     public String saveDataMateri(@RequestBody Map<String, Object> data){
-//        System.out.println("DAAA"+data);
         return materiService.saveDataMateri(data);
     }
     @PostMapping("/EditDataMateri")
     public String editDataMateri(@RequestBody Map<String, Object> data){
-//        System.out.println("DAAA"+data);
+        System.out.println("abcdjfd"+data);
+
         return materiService.updateDataMateri(data);
     }
     @PostMapping("/GetListKategoriProgram")

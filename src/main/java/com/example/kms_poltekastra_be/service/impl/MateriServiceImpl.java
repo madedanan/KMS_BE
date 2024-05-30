@@ -49,14 +49,15 @@ public class MateriServiceImpl implements MateriService {
 
     @Override
     public String updateDataMateri(Map<String, Object> data) {
+        System.out.println("Update : "+data);
         List<String> dataList = new ArrayList<>();
         for(Map.Entry<String, Object>entry : data.entrySet()){
             dataList.add(entry.getValue().toString());
         }
         String result = polmanAstraRepository.callProcedure("kms_editMateri", dataList.toArray(new String[0]));
+        System.out.println("Update : "+dataList);
         return result;
     }
-
     @Override
     public String setStatusMateri(Map<String, Object> data) {
         List<String> dataList = new ArrayList<>();
