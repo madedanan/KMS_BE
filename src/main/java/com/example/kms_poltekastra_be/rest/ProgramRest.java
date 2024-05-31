@@ -22,7 +22,7 @@ public class ProgramRest {
 
     @PostMapping("/GetDataKKByPIC")
     public String getDataKKByPIC(@RequestBody Map<String, Object> data){
-//        System.out.println("EAAA"+data);
+        System.out.println("EAAA"+data);
         return programService.getDataKKByPIC(data);
     }
     @PostMapping("/GetProgramByKK")
