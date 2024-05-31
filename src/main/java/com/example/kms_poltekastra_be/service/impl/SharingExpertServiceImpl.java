@@ -2,7 +2,7 @@ package com.example.kms_poltekastra_be.service.impl;
 
 import com.example.kms_poltekastra_be.repository.PolmanAstraRepository;
 import com.example.kms_poltekastra_be.service.ForumService;
-import com.example.kms_poltekastra_be.service.MateriService;
+import com.example.kms_poltekastra_be.service.SharingExpertService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,19 +13,19 @@ import java.util.Map;
 
 @Service
 @Transactional
-public class ForumServiceImpl implements ForumService {
+public class SharingExpertServiceImpl implements SharingExpertService {
     @Autowired
     PolmanAstraRepository polmanAstraRepository;
 
     @Override
-    public String saveDataForum(Map<String, Object> data) {
-        System.out.println("Forums : "+data);
-        List<String> forumList = new ArrayList<>();
+    public String saveDataSharing(Map<String, Object> data) {
+        System.out.println("Sharing Experts : "+data);
+        List<String> sharingList = new ArrayList<>();
         for(Map.Entry<String, Object>entry : data.entrySet()){
-            forumList.add(entry.getValue().toString());
+            sharingList.add(entry.getValue().toString());
         }
-        String result = polmanAstraRepository.callProcedure("kms_createForum", forumList.toArray(new String[0]));
-        System.out.println(forumList);
+        String result = polmanAstraRepository.callProcedure("kms_createSharingExpert", sharingList.toArray(new String[0]));
+        System.out.println(sharingList);
         return result;
     }
 }

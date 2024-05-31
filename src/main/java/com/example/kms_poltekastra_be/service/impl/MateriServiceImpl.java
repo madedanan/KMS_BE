@@ -34,41 +34,37 @@ public class MateriServiceImpl implements MateriService {
             materiList.add(entry.getValue().toString());
         }
         String result = polmanAstraRepository.callProcedure("kms_createMateri", materiList.toArray(new String[0]));
-        System.out.println("adada"+materiList);
+        System.out.println(materiList);
+        return result;
+    }
+    @Override
+    public String getListKategoriProgram(Map<String, Object> data) {
+        List<String> dataList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            dataList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_getDataKategoriProgram", dataList.toArray(new String[0]));
         return result;
     }
 
     @Override
-    public String getProgresMateri(Map<String, Object> data){
-        List<String> materiList = new ArrayList<>();
+    public String updateDataMateri(Map<String, Object> data) {
+        System.out.println("Update : "+data);
+        List<String> dataList = new ArrayList<>();
         for(Map.Entry<String, Object>entry : data.entrySet()){
-            materiList.add(entry.getValue().toString());
+            dataList.add(entry.getValue().toString());
         }
-        String result = polmanAstraRepository.callProcedure("kms_getPoinProgress", materiList.toArray(new String[0]));
+        String result = polmanAstraRepository.callProcedure("kms_editMateri", dataList.toArray(new String[0]));
+        System.out.println("Update : "+dataList);
         return result;
     }
-
     @Override
-    public String saveProgresMateri(Map<String, Object> data){
-        System.out.println("Materis : "+data);
-        List<String> materiList = new ArrayList<>();
+    public String setStatusMateri(Map<String, Object> data) {
+        List<String> dataList = new ArrayList<>();
         for(Map.Entry<String, Object>entry : data.entrySet()){
-            materiList.add(entry.getValue().toString());
+            dataList.add(entry.getValue().toString());
         }
-        String result = polmanAstraRepository.callProcedure("kms_saveProgresMateri", materiList.toArray(new String[0]));
-        System.out.println("adada"+materiList);
-        return result;
-    }
-
-    @Override
-    public String updateProgresMateri(Map<String, Object> data){
-        System.out.println("Materis : "+data);
-        List<String> materiList = new ArrayList<>();
-        for(Map.Entry<String, Object>entry : data.entrySet()){
-            materiList.add(entry.getValue().toString());
-        }
-        String result = polmanAstraRepository.callProcedure("kms_updateMateriPoinProgress", materiList.toArray(new String[0]));
-        System.out.println("adada"+materiList);
+        String result = polmanAstraRepository.callProcedure("kms_setStatusMateri", dataList.toArray(new String[0]));
         return result;
     }
 }

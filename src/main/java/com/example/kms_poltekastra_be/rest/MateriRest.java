@@ -30,11 +30,15 @@ public class MateriRest {
         System.out.println("DAAA"+data);
         return materiService.saveDataMateri(data);
     }
+    @PostMapping("/EditDataMateri")
+    public String editDataMateri(@RequestBody Map<String, Object> data){
+        System.out.println("abcdjfd"+data);
 
-    @PostMapping("/GetProgresMateri")
-    public String getProgresMateri(@RequestBody Map<String, Object> data){
-        System.out.println("EAAA"+data);
-        return materiService.getProgresMateri(data);
+        return materiService.updateDataMateri(data);
+    }
+    @PostMapping("/GetListKategoriProgram")
+    public String getListKategoriProgram(@RequestBody Map<String, Object> data){
+        return materiService.getListKategoriProgram(data);
     }
 
     @CrossOrigin
@@ -44,10 +48,9 @@ public class MateriRest {
         return materiService.saveProgresMateri(data);
     }
 
-    @CrossOrigin
-    @PostMapping("/UpdateProgresMateri")
-    public String updateProgresMateri(@RequestBody Map<String, Object> data){
-        System.out.println("DAAA"+data);
-        return materiService.updateProgresMateri(data);
+    @PostMapping("/setStatusMateri")
+    public String setStatusMateri(@RequestBody Map<String, Object> data){
+        System.out.println("Status: "+data);
+        return materiService.setStatusMateri(data);
     }
 }
