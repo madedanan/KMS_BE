@@ -40,7 +40,7 @@ public class MateriRest {
     @CrossOrigin
     @PostMapping("/SaveProgresMateri")
     public String saveProgresMateri(@RequestBody Map<String, Object> data){
-        System.out.println("DAAA"+data);
+        System.out.println("Save Progres: "+data);
         return materiService.saveProgresMateri(data);
     }
 

@@ -37,4 +37,13 @@ public class QuizRest {
         return quizService.saveDataQuiz(data);
     }
 
+    @CrossOrigin
+    @PostMapping("/SaveTransaksiQuiz")
+    public String saveTransaksiQuiz(@RequestBody Map<String, Object> data) {
+        System.out.println("quiz" + data);
+        return quizService.saveTransaksiQuiz(data);
+    }
+
+
+
 }
