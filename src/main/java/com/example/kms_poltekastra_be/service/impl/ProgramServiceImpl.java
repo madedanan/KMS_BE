@@ -32,6 +32,7 @@ public class ProgramServiceImpl implements ProgramService {
             dataList.add(entry.getValue().toString());
         }
         String result = polmanAstraRepository.callProcedure("kms_getDataProgramByKK", dataList.toArray(new String[0]));
+        System.out.println("ProgramData : "+dataList);
         return result;
     }
 
@@ -42,6 +43,7 @@ public class ProgramServiceImpl implements ProgramService {
             dataList.add(entry.getValue().toString());
         }
         String result = polmanAstraRepository.callProcedure("kms_getDataKategoriByProgram", dataList.toArray(new String[0]));
+        System.out.println("kategoridata"+dataList);
         return result;
     }
 }
