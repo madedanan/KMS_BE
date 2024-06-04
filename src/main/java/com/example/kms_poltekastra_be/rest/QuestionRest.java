@@ -23,4 +23,10 @@ public class QuestionRest {
         System.out.println("question" + data);
         return questionService.saveDataQuestion(data);
     }
+
+    @PostMapping("/UpdateDataQuestion")
+    public String editDataQuestion(@RequestBody Map<String, Object> data){
+        System.out.println("EEEE"+data);
+        return questionService.editDataQuestion(data);
+    }
 }
