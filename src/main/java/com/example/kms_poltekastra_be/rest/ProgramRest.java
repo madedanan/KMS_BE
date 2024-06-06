@@ -22,17 +22,33 @@ public class ProgramRest {
 
     @PostMapping("/GetDataKKByPIC")
     public String getDataKKByPIC(@RequestBody Map<String, Object> data){
-        System.out.println("kk"+data);
+//        System.out.println("kk"+data);
         return programService.getDataKKByPIC(data);
     }
     @PostMapping("/GetProgramByKK")
     public String getDataProgramByKK(@RequestBody Map<String, Object> data){
-        System.out.println("program"+data);
+//        System.out.println("program"+data);
         return programService.getDataProgramByKK(data);
     }
     @PostMapping("/GetKategoriByProgram")
     public String getDataKategoriByProgram(@RequestBody Map<String, Object> data){
-        System.out.println("kategori"+data);
+//        System.out.println("kategori"+data);
         return programService.getDataKategoriByProgram(data);
     }
+    @PostMapping("/CountAnggotaByKK")
+    public String countAnggotaByKK(@RequestBody Map<String, Object> data){
+//        System.out.println("Anggota"+data);
+        return programService.countAnggotaByKK(data);
+    }
+    @PostMapping("/CountProgramByKK")
+    public String countProgramByKK(@RequestBody Map<String, Object> data){
+//        System.out.println("Program"+data);
+        return programService.countProgramByKK(data);
+    }
+    @PostMapping("/CountMateriByKategori")
+    public String countMateriByKategori(@RequestBody Map<String, Object> data){
+        System.out.println("Materi"+data);
+        return programService.countMateriByKategori(data);
+    }
+
 }
