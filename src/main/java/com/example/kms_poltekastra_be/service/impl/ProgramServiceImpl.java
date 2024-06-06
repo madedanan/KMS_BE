@@ -32,6 +32,7 @@ public class ProgramServiceImpl implements ProgramService {
             dataList.add(entry.getValue().toString());
         }
         String result = polmanAstraRepository.callProcedure("kms_getDataProgramByKK", dataList.toArray(new String[0]));
+        System.out.println("ProgramData : "+dataList);
         return result;
     }
 
@@ -42,6 +43,40 @@ public class ProgramServiceImpl implements ProgramService {
             dataList.add(entry.getValue().toString());
         }
         String result = polmanAstraRepository.callProcedure("kms_getDataKategoriByProgram", dataList.toArray(new String[0]));
+        System.out.println("kategoridata"+dataList);
+        return result;
+    }
+
+    @Override
+    public String countAnggotaByKK(Map<String, Object> data) {
+        List<String> dataList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            dataList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_countAnggotaByKK", dataList.toArray(new String[0]));
+        System.out.println("jumlah"+dataList);
+        return result;
+    }
+
+    @Override
+    public String countProgramByKK(Map<String, Object> data) {
+        List<String> dataList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            dataList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_countProgramByKK", dataList.toArray(new String[0]));
+        System.out.println("jumlah"+dataList);
+        return result;
+    }
+
+    @Override
+    public String countMateriByKategori(Map<String, Object> data) {
+        List<String> dataList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            dataList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_countMateriByKategori", dataList.toArray(new String[0]));
+        System.out.println("jumlah"+dataList);
         return result;
     }
 }

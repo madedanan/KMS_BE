@@ -23,12 +23,22 @@ public class MateriRest {
         System.out.println("EAAA"+data);
         return materiService.getDataMateri(data);
     }
+    @PostMapping("/GetDataMateriByKategori")
+    public String getDataMateriByKategori(@RequestBody Map<String, Object> data){
+//        System.out.println("EAAA"+data);
+        return materiService.getDataMateriByKategori(data);
+    }
 
     @CrossOrigin
     @PostMapping("/SaveDataMateri")
     public String saveDataMateri(@RequestBody Map<String, Object> data){
         System.out.println("DAAA"+data);
         return materiService.saveDataMateri(data);
+    }
+    @PostMapping("/SaveDataSharingExpert")
+    public String saveDataSharingExpert(@RequestBody Map<String, Object> data){
+        System.out.println("savesharing"+data);
+        return materiService.saveDataSharingExpert(data);
     }
     @PostMapping("/EditDataMateri")
     public String editDataMateri(@RequestBody Map<String, Object> data){
