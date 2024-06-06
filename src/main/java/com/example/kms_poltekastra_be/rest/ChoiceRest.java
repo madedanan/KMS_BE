@@ -23,4 +23,10 @@ public class ChoiceRest {
         System.out.println("ADA" + data);
         return choiceService.saveDataChoice(data);
     }
+
+    @PostMapping("/UpdateDataChoice")
+    public String editDataChoice(@RequestBody Map<String, Object> data){
+        System.out.println("EEEE"+data);
+        return choiceService.editDataChoice(data);
+    }
 }

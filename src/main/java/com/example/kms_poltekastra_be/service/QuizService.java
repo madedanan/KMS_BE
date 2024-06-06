@@ -8,4 +8,5 @@ public interface QuizService {
     public String getDataResultQuiz(Map<String, Object> data);
     public String saveDataQuiz(Map<String, Object> data);
     public String saveTransaksiQuiz(Map<String, Object> data);
+    public String editDataQuiz(Map<String, Object> data);
 }

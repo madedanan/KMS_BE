@@ -27,4 +27,16 @@ public class ChoiceServiceImpl implements ChoiceService {
         System.out.println("ada" + choiceList);
         return result;
     }
+
+    @Override
+    public String editDataChoice(Map<String, Object> data){
+        System.out.println("Choices : "+data);
+        List<String> choiceList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            choiceList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_editChoice", choiceList.toArray(new String[0]));
+//        System.out.println(pustakaList);
+        return result;
+    }
 }

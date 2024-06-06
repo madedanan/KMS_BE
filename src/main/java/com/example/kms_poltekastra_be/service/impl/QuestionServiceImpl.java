@@ -27,4 +27,16 @@ public class QuestionServiceImpl implements QuestionService {
         System.out.println("ada" + questionList);
         return result;
     }
+
+    @Override
+    public String editDataQuestion(Map<String, Object> data){
+        System.out.println("Questions : "+data);
+        List<String> questionList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            questionList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_editQuestion", questionList.toArray(new String[0]));
+//        System.out.println(questionList);
+        return result;
+    }
 }

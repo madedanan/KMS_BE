@@ -6,4 +6,5 @@ public interface ChoiceService {
 
     //public String getDataChoice(Map<String, Object> data);
     public String saveDataChoice(Map<String, Object> data);
+    public String editDataChoice(Map<String, Object> data);
 }
