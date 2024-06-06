@@ -67,4 +67,24 @@ public class MateriServiceImpl implements MateriService {
         String result = polmanAstraRepository.callProcedure("kms_setStatusMateri", dataList.toArray(new String[0]));
         return result;
     }
+
+    @Override
+    public String saveProgresMateri(Map<String, Object> data) {
+        List<String> dataList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            dataList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_saveProgresMateri", dataList.toArray(new String[0]));
+        return result;
+    }
+
+    @Override
+    public String getProgresMateri(Map<String, Object> data) {
+        List<String> dataList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            dataList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_getPoinProgress", dataList.toArray(new String[0]));
+        return result;
+    }
 }

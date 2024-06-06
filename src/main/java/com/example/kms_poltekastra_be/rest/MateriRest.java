@@ -53,4 +53,11 @@ public class MateriRest {
         System.out.println("Status: "+data);
         return materiService.setStatusMateri(data);
     }
+
+    @PostMapping("/GetProgresMateri")
+    public String getProgresMateri(@RequestBody Map<String, Object> data){
+        System.out.println("Status: "+data);
+        return materiService.getProgresMateri(data);
+    }
+
 }
