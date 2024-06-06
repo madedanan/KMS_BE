@@ -11,7 +11,7 @@ import java.util.Map;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/Forums")
+@RequestMapping("/Forum")
 public class ForumRest {
     @Autowired
     private ForumService forumService;
@@ -24,5 +24,17 @@ public class ForumRest {
     public String saveDataForum(@RequestBody Map<String, Object> data){
         System.out.println("FAAA"+data);
         return forumService.saveDataForum(data);
+    }
+
+    @PostMapping("/GetDataForum")
+    public String getDataForum(@RequestBody Map<String, Object> data){
+        System.out.println("FAAA"+data);
+        return forumService.getDataForum(data);
+    }
+
+    @PostMapping("/SaveTransaksiForum")
+    public String saveTransaksiForum(@RequestBody Map<String, Object> data){
+        System.out.println("FAAA"+data);
+        return forumService.saveTransaksiForum(data);
     }
 }
