@@ -10,4 +10,6 @@ public interface ProgramService {
     public String countAnggotaByKK(Map<String, Object> data);
     public String countProgramByKK(Map<String, Object> data);
     public String countMateriByKategori(Map<String, Object> data);
+
+    public String getDataKategoriKKById(Map<String, Object> data);
 }
