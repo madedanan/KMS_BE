@@ -50,5 +50,10 @@ public class ProgramRest {
         System.out.println("Materi"+data);
         return programService.countMateriByKategori(data);
     }
+    @PostMapping("/GetKategoriKKById")
+    public String getDataKategoriKKById(@RequestBody Map<String, Object> data){
+        System.out.println("Materi"+data);
+        return programService.getDataKategoriKKById(data);
+    }
 
 }
