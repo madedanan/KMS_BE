@@ -28,4 +28,28 @@ public class ForumServiceImpl implements ForumService {
         System.out.println(forumList);
         return result;
     }
+
+    @Override
+    public String getDataForum(Map<String, Object> data) {
+        System.out.println("Forums : "+data);
+        List<String> forumList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            forumList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_getDataForum", forumList.toArray(new String[0]));
+        System.out.println(forumList);
+        return result;
+    }
+
+    @Override
+    public String saveTransaksiForum(Map<String, Object> data) {
+        System.out.println("Forums : "+data);
+        List<String> forumList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            forumList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_saveTransaksiForum", forumList.toArray(new String[0]));
+        System.out.println(forumList);
+        return result;
+    }
 }

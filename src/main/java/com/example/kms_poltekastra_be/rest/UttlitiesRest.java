@@ -31,4 +31,9 @@ public class UttlitiesRest {
     public ResponseEntity<Resource> downloadFile(@RequestParam String namaFile) {
         return utilitiesService.downloadFile(namaFile);
     }
+
+    @GetMapping("/Upload/PreviewFile")
+    public ResponseEntity<byte[]> previewFile(@RequestParam String namaFile) {
+        return utilitiesService.previewFile(namaFile);
+    }
 }

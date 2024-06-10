@@ -10,7 +10,9 @@ public interface MateriService {
     public String saveDataMateri(Map<String, Object> data);
     public String getListKategoriProgram(Map<String, Object> data);
     public String updateDataMateri(Map<String, Object> data);
-    public String setStatusMateri(Map<String, Object> data);
+    public String setStatusMateri(Map<String, Object> data);;
+    public String saveProgresMateri(Map<String, Object> data);
+    public String getProgresMateri(Map<String, Object> data);
     public String saveDataSharingExpert(Map<String, Object> data);
 
 }
