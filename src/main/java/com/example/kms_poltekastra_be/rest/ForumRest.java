@@ -25,11 +25,21 @@ public class ForumRest {
         System.out.println("FAAA"+data);
         return forumService.saveDataForum(data);
     }
+    @PostMapping("/EditDataForum")
+    public String editDataForum(@RequestBody Map<String, Object> data){
+        System.out.println("FAAA"+data);
+        return forumService.updateDataForum(data);
+    }
 
     @PostMapping("/GetDataForum")
     public String getDataForum(@RequestBody Map<String, Object> data){
         System.out.println("FAAA"+data);
         return forumService.getDataForum(data);
+    }
+    @PostMapping("/GetDataForumByMateri")
+    public String getDataForumByMateri(@RequestBody Map<String, Object> data){
+        System.out.println("forum materi"+data);
+        return forumService.getDataForumByMateri(data);
     }
 
     @PostMapping("/SaveTransaksiForum")
