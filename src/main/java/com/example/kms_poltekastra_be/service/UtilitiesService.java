@@ -9,4 +9,5 @@ import java.util.Map;
 public interface UtilitiesService {
     public ResponseEntity<?> uploadFile(MultipartFile file);
     public ResponseEntity<Resource> downloadFile(String fileName);
+    public ResponseEntity<byte[]> previewFile(String fileName);
 }

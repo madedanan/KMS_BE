@@ -20,7 +20,7 @@ public class MateriRest {
 
     @PostMapping("/GetDataMateri")
     public String getDataMateri(@RequestBody Map<String, Object> data){
-//        System.out.println("EAAA"+data);
+        System.out.println("EAAA"+data);
         return materiService.getDataMateri(data);
     }
     @PostMapping("/GetDataMateriByKategori")
@@ -29,8 +29,10 @@ public class MateriRest {
         return materiService.getDataMateriByKategori(data);
     }
 
+    @CrossOrigin
     @PostMapping("/SaveDataMateri")
     public String saveDataMateri(@RequestBody Map<String, Object> data){
+        System.out.println("DAAA"+data);
         return materiService.saveDataMateri(data);
     }
     @PostMapping("/SaveDataSharingExpert")
@@ -49,9 +51,23 @@ public class MateriRest {
         return materiService.getListKategoriProgram(data);
     }
 
+    @CrossOrigin
+    @PostMapping("/SaveProgresMateri")
+    public String saveProgresMateri(@RequestBody Map<String, Object> data){
+        System.out.println("Save Progres: "+data);
+        return materiService.saveProgresMateri(data);
+    }
+
     @PostMapping("/setStatusMateri")
     public String setStatusMateri(@RequestBody Map<String, Object> data){
         System.out.println("Status: "+data);
         return materiService.setStatusMateri(data);
     }
+
+    @PostMapping("/GetProgresMateri")
+    public String getProgresMateri(@RequestBody Map<String, Object> data){
+        System.out.println("Status: "+data);
+        return materiService.getProgresMateri(data);
+    }
+
 }

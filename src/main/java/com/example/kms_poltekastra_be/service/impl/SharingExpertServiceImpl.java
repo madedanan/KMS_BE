@@ -28,4 +28,16 @@ public class SharingExpertServiceImpl implements SharingExpertService {
         System.out.println(sharingList);
         return result;
     }
+
+    @Override
+    public String saveDataSharingByMateri(Map<String, Object> data) {
+        System.out.println("Sharing Experts : "+data);
+        List<String> sharingList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            sharingList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_getDataSharingByMateri", sharingList.toArray(new String[0]));
+        System.out.println(sharingList);
+        return result;
+    }
 }
