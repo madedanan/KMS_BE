@@ -27,6 +27,16 @@ public class MateriServiceImpl implements MateriService {
     }
 
     @Override
+    public String getDataMateriById(Map<String, Object> data){
+        List<String> materiList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            materiList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_getDataMateriById", materiList.toArray(new String[0]));
+        return result;
+    }
+
+    @Override
     public String getDataMateriByKategori(Map<String, Object> data) {
         List<String> materiList = new ArrayList<>();
         for(Map.Entry<String, Object>entry : data.entrySet()){
@@ -85,6 +95,16 @@ public class MateriServiceImpl implements MateriService {
             dataList.add(entry.getValue().toString());
         }
         String result = polmanAstraRepository.callProcedure("kms_saveProgresMateri", dataList.toArray(new String[0]));
+        return result;
+    }
+
+    @Override
+    public String updatePoinProgresMateri(Map<String, Object> data) {
+        List<String> dataList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            dataList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_updateMateriPoinProgress", dataList.toArray(new String[0]));
         return result;
     }
 

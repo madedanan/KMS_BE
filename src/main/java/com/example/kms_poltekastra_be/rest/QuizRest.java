@@ -30,6 +30,18 @@ public class QuizRest {
         return quizService.getDataResultQuiz(data);
     }
 
+    @PostMapping("/GetDataQuiz")
+    public String getDataQuiz(@RequestBody Map<String, Object> data){
+        System.out.println("EAAA"+data);
+        return quizService.getDataQuiz(data);
+    }
+
+    @PostMapping("/GetDataTransaksiQuizById")
+    public String getDataTransaksiQuizById(@RequestBody Map<String, Object> data){
+        System.out.println("EAAA"+data);
+        return quizService.getDataTransaksiQuizById(data);
+    }
+
     @CrossOrigin
     @PostMapping("/SaveDataQuiz")
     public String saveDataQuiz(@RequestBody Map<String, Object> data) {
@@ -44,6 +56,11 @@ public class QuizRest {
         return quizService.saveTransaksiQuiz(data);
     }
 
+    @PostMapping("/GetQuizByID")
+    public String getDataQuizByID(@RequestBody Map<String, Object> data) {
+        System.out.println("getquizid" + data);
+        return quizService.getDataQuizByID(data);
+    }
 
 
 }

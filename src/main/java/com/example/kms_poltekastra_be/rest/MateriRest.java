@@ -23,6 +23,11 @@ public class MateriRest {
         System.out.println("EAAA"+data);
         return materiService.getDataMateri(data);
     }
+    @PostMapping("/GetDataMateriById")
+    public String getDataMateriById(@RequestBody Map<String, Object> data){
+        System.out.println("EAAA"+data);
+        return materiService.getDataMateriById(data);
+    }
     @PostMapping("/GetDataMateriByKategori")
     public String getDataMateriByKategori(@RequestBody Map<String, Object> data){
 //        System.out.println("EAAA"+data);
@@ -56,6 +61,13 @@ public class MateriRest {
     public String saveProgresMateri(@RequestBody Map<String, Object> data){
         System.out.println("Save Progres: "+data);
         return materiService.saveProgresMateri(data);
+    }
+
+    @CrossOrigin
+    @PostMapping("/UpdatePoinProgresMateri")
+    public String updatePoinProgresMateri(@RequestBody Map<String, Object> data){
+        System.out.println("Save Progres: "+data);
+        return materiService.updatePoinProgresMateri(data);
     }
 
     @PostMapping("/setStatusMateri")
