@@ -71,4 +71,16 @@ public class QuizServiceImpl implements QuizService {
         //System.out.println(quizList);
         return result;
     }
+
+    @Override
+    public String getDataQuizByID(Map<String, Object> data) {
+        System.out.println("getquizbyID : " + data);
+        List<String> quizList = new ArrayList<>();
+        for (Map.Entry<String, Object> entry : data.entrySet()) {
+            quizList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_getDataQuizByID", quizList.toArray(new String[0]));
+        System.out.println("return getquizbyID" + quizList);
+        return result;
+    }
 }

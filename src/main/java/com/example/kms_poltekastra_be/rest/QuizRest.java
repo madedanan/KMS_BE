@@ -44,6 +44,10 @@ public class QuizRest {
         return quizService.saveTransaksiQuiz(data);
     }
 
-
+    @PostMapping("/GetQuizByID")
+    public String getDataQuizByID(@RequestBody Map<String, Object> data){
+        System.out.println("getquizid"+data);
+        return quizService.getDataQuizByID(data);
+    }
 
 }
