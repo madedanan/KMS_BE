@@ -57,10 +57,9 @@ public class QuizRest {
     }
 
     @PostMapping("/GetQuizByID")
-    public String getDataQuizByID(@RequestBody Map<String, Object> data) {
-        System.out.println("getquizid" + data);
+    public String getDataQuizByID(@RequestBody Map<String, Object> data){
+        System.out.println("getquizid"+data);
         return quizService.getDataQuizByID(data);
     }
-
 
 }
