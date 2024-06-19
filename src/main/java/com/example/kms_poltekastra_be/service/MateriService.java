@@ -6,6 +6,8 @@ public interface MateriService {
 
     public String getDataMateri(Map<String, Object> data);
     public String getDataMateriByKategori(Map<String, Object> data);
+    public String getDataMateriByID(Map<String, Object> data);
+
 
     public String saveDataMateri(Map<String, Object> data);
     public String getListKategoriProgram(Map<String, Object> data);

@@ -28,6 +28,11 @@ public class MateriRest {
 //        System.out.println("EAAA"+data);
         return materiService.getDataMateriByKategori(data);
     }
+    @PostMapping("/GetDataMateriByID")
+    public String getDataMateriByID(@RequestBody Map<String, Object> data){
+//        System.out.println("EAAA"+data);
+        return materiService.getDataMateriByID(data);
+    }
 
     @CrossOrigin
     @PostMapping("/SaveDataMateri")

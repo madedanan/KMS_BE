@@ -37,6 +37,16 @@ public class MateriServiceImpl implements MateriService {
     }
 
     @Override
+    public String getDataMateriByID(Map<String, Object> data) {
+        List<String> materiList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            materiList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_getDataMateriById", materiList.toArray(new String[0]));
+        return result;
+    }
+
+    @Override
     public String saveDataMateri(Map<String, Object> data){
         System.out.println("Materis : "+data);
         List<String> materiList = new ArrayList<>();
