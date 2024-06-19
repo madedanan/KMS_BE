@@ -35,6 +35,15 @@ public class QuizServiceImpl implements QuizService {
         String result = polmanAstraRepository.callProcedure("kms_getDataResultQuiz", quizList.toArray(new String[0]));
         return result;
     }
+    @Override
+    public String getDataQuiz(Map<String, Object> data){
+        List<String> quizList = new ArrayList<>();
+        for(Map.Entry<String, Object>entry : data.entrySet()){
+            quizList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_getDataQuiz", quizList.toArray(new String[0]));
+        return result;
+    }
 
     @Override
     public String saveDataQuiz(Map<String, Object> data) {
@@ -56,6 +65,41 @@ public class QuizServiceImpl implements QuizService {
             quizList.add(entry.getValue().toString());
         }
         String result = polmanAstraRepository.callProcedure("kms_createTransaksiQuiz", quizList.toArray(new String[0]));
+        System.out.println("ada" + quizList);
+        return result;
+    }
+    @Override
+    public String saveReviewQuiz(Map<String, Object> data) {
+        System.out.println("TransaksiQUiz : " + data);
+        List<String> quizList = new ArrayList<>();
+        for (Map.Entry<String, Object> entry : data.entrySet()) {
+            quizList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_saveReviewQuiz", quizList.toArray(new String[0]));
+        System.out.println("ada" + quizList);
+        return result;
+    }
+
+    @Override
+    public String getDataTransaksiQuizById(Map<String, Object> data) {
+        System.out.println("TransaksiQUiz : " + data);
+        List<String> quizList = new ArrayList<>();
+        for (Map.Entry<String, Object> entry : data.entrySet()) {
+            quizList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_getDataTransaksiQuizById", quizList.toArray(new String[0]));
+        System.out.println("ada" + quizList);
+        return result;
+    }
+
+    @Override
+    public String getDataTransaksiReview(Map<String, Object> data) {
+        System.out.println("TransaksiQUiz : " + data);
+        List<String> quizList = new ArrayList<>();
+        for (Map.Entry<String, Object> entry : data.entrySet()) {
+            quizList.add(entry.getValue().toString());
+        }
+        String result = polmanAstraRepository.callProcedure("kms_getDataTransaksiReview", quizList.toArray(new String[0]));
         System.out.println("ada" + quizList);
         return result;
     }
