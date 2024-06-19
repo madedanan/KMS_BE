@@ -21,22 +21,34 @@ public class QuestionServiceImpl implements QuestionService {
         System.out.println("Questions : " + data);
         List<String> questionList = new ArrayList<>();
         for (Map.Entry<String, Object> entry : data.entrySet()) {
-            questionList.add(entry.getValue().toString());
+            // Verifikasi bahwa nilai tidak null sebelum mengonversi ke String
+            if (entry.getValue() != null) {
+                questionList.add(entry.getValue().toString());
+            } else {
+                // Tindakan yang sesuai jika nilai null, seperti memberikan nilai default atau melewatkan nilai ini
+                questionList.add(null);
+            }
         }
         String result = polmanAstraRepository.callProcedure("kms_createQuestion", questionList.toArray(new String[0]));
-        System.out.println("ada" + questionList);
+        System.out.println("Questions processed: " + questionList);
         return result;
     }
 
     @Override
-    public String editDataQuestion(Map<String, Object> data){
-        System.out.println("Questions : "+data);
+    public String editDataQuestion(Map<String, Object> data) {
+        System.out.println("Questions : " + data);
         List<String> questionList = new ArrayList<>();
-        for(Map.Entry<String, Object>entry : data.entrySet()){
-            questionList.add(entry.getValue().toString());
+        for (Map.Entry<String, Object> entry : data.entrySet()) {
+            // Verifikasi bahwa nilai tidak null sebelum mengonversi ke String
+            if (entry.getValue() != null) {
+                questionList.add(entry.getValue().toString());
+            } else {
+                // Tindakan yang sesuai jika nilai null, seperti memberikan nilai default atau melewatkan nilai ini
+                questionList.add(null);
+            }
         }
         String result = polmanAstraRepository.callProcedure("kms_editQuestion", questionList.toArray(new String[0]));
-//        System.out.println(questionList);
+        System.out.println("Questions processed: " + questionList);
         return result;
     }
 }
